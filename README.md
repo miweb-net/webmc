@@ -28,6 +28,8 @@ launching presentation software with hymn file names containing spaces is handle
 Client.py deleteFile moved logging into the 'try' clause to effectively make delete work and
 log properly.
 
+Updated organizer.html documentation to include Refresh functionality.
+
 1.2.4
 No code changes. This is the first zipped version.
 
