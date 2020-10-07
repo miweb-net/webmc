@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8"/>
+	<title>Import Wizard</title>
+	<link rel="stylesheet" href="../css/mountain.css">
+	<link rel="stylesheet" href="../css/menu.css">
+	<link rel="stylesheet" href="../css/importer.css">
+</head>
+<body>
+<div>
+	<nav class="inav">
+		<div class="step" id="step1">Title and Authors</div>
+		<div class="step" id="step2">Arrangement Order</div>
+		<div class="step" id="step3">Image Mapping</div>
+		<div class="step" id="step4">Summary and Upload</div>
+	</nav>
+	<div class="page" id="page1">
+		<h2 class="pagetitle">Title and Authors</h2>
+		<p class="info">Insert the title, hymn number, authors and copyright information</p>
+		<div class="content">
+			<div class="selcontainer" id="bookdiv">
+				Database:
+				<select id="books"></select>
+				<span class="downarrow" id="book_arrow">▼</span>
+			</div>
+			<div class="entrydiv" id="titlediv">
+				<span class="required" id="labeltitle">Hymn Title:</span>
+				<input class="dlginput" type="text" id="hymntitle" required="true" minlength="5" placeholder="Required" />
+			</div>
+			<div class="entrydiv" id="numberdiv">
+				<span class="required" id="labelnumber">Hymn Number:</span>
+				<input class="dlginput" type="text" id="hymnnumber" required="true" minlength="1" placeholder="Required" />
+			</div>
+			<div class="entrydiv" id="lyricsdiv">
+				<span class="optional" id="labellyricist">Lyricist:</span>
+				<input class="dlginput" type="text" id="lyricist" placeholder="Unknown"/>
+				<span class="optional" id="labelldate">Date:</span>
+				<input class="dlginput" type="text" id="ldate" placeholder="Unknown"/>
+			</div>
+			<div class="entrydiv" id="composerdiv">
+				<span class="optional" id="labelcomposer">Composer:</span>
+				<input class="dlginput" type="text" id="composer" placeholder="Unknown"/>
+				<span class="optional" id="labelcdate">Date:</span>
+				<input class="dlginput" type="text" id="cdate" placeholder="Unknown"/>
+			</div>
+			<div class="entrydiv" id="pubdomaindiv">
+				<input class="dlginput" type="checkbox" id="copycheck" name="copycheck"/>
+				<label for="copycheck">Public Domain</label>
+			</div>
+			<div class="entrydiv" id="copydatediv">
+				<span class="optional" id="labelcpydate">Date:</span>
+				<input class="dlginput" type="number" id="cpyrightdate" min="1600" placeholder="Required"/>
+			</div>
+			<div class="entrydiv" id="copyrightdiv">
+				<span class="optional" id="labelowner">Owner:</span>
+				<input class="dlginput" type="text" id="owner" placeholder="Required"/>
+			</div>
+			<div class="entrydiv" id="copysamplediv">
+				<span class="optional" id="labelsample">Sample:</span>
+				<textarea class="sample" id="sample" disabled="true"></textarea>
+			</div>
+		</div>
+	</div>
+	<div class="page" id="page2">
+		<h2 class="pagetitle">Arragement Order</h2>
+		<p class="info">Arrange the parts from the left box to the right box to create a sequence which matches the way the hymn is usually sung.</p>
+		<div class="partlablesdiv">
+			<span class="partlabel" id="partlabel">Part Names</span>
+			<span class="partlabel" id="sequencelabel">Part Sequence</span>
+		</div>
+		<div class="partcontainer" id="partcontainer">
+			<div class="partlist" id="partlist"></div>
+			<div class="partlist" id="sequencelist"></div>
+		</div>
+		<div class="partbuttonsdiv" id="partbuttonsdiv">
+			<button type="text" class="buttons" id="lang">Switch Language</button>
+			<button type="text" class="buttons" id="clear">Clear</button>
+		</div>
+	</div>
+	<div class="page" id="page3">
+		<h2 class="pagetitle">Image Mapping</h2>
+		<p class="info">After choosing a folder containing image files for the hymn, match the image files to the arrangement parts by color.</p>
+		<div class="folderdiv" id="folderdiv">
+			<span class="partlabel" id="folderlabel">Images Folder:</span>
+			<button type="text" class="buttons" id="choosefolder">Browse...</button>
+			<div id="pathdiv"><input type="text" id="importpath"/></div>
+		</div>
+		<div class="partlabels" id="pathslabel">
+			<span class="partlabel" id="partlab2">Part Names</span>
+			<span class="partlabel" id="labelfiles">Image Files</span>
+		</div>
+		<div class="partcontainer" id="partcontainer2">
+			<div class="partlist" id="partlist2"></div>
+			<div class="partlist" id="pathlist"></div>
+		</div>
+		<div class="audio">
+			<div class="partlabel" id="audiolabel">Select Audio File</div>
+			<div class="partlist" id="audiolist"></div>
+		</div>
+	</div>
+	<div class="page" id="page4">
+		<h2 class="pagetitle">Summary and Upload</h2>
+		<p class="info">Check all of the information below and make corrections by switching to any page necessary. Then press &lt;Upload&gt; to commit changes to the database.</p>
+		<div class="meta">
+			<div class="metarow">
+				<div class="left">Title:</div>
+				<div class="right" id="mtitle"></div>
+			</div>
+			<div class="metarow">
+				<div class="left">Database:</div>
+				<div class="right" id="mdb"></div>
+			</div>
+			<div class="metarow">
+				<div class="left">Number:</div>
+				<div class="right" id="mnumber"></div>
+			</div>
+			<div class="metarow">
+				<div class="left">Lyricist:</div>
+				<div class="right" id="mlyrics"></div>
+			</div>
+			<div class="metarow">
+				<div class="left">Composer:</div>
+				<div class="right" id="mcomposer"></div>
+			</div>
+			<div class="metarow">
+				<div class="left">Copyright:</div>
+				<div class="right" id="mcopy"></div>
+			</div>
+		</div>
+		<div class="scroller">
+			<table class="summtable" id="summtable">
+			</table>
+		</div>
+	</div>
+	<div class="controls">
+		<button type="button" class="buttons" id="cancel">Cancel</button>
+		<button type="button" class="buttons" id="back" disabled>Back</button>
+		<button type="button" class="buttons" id="next" disabled>Next</button>
+	</div>
+</div>
+<script src="../javascript/shared.js"></script>
+<script src="../javascript/importer.js"></script>
+<script src="../javascript/connect.js"></script>
+<script initializeImporter();></script>
+</body>
+</html>

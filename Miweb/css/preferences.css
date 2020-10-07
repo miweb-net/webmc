@@ -1,0 +1,30 @@
+.preferences_win	{ position: absolute;
+					  visibility: hidden;
+					  padding : 10px;
+					  top: calc(60vh - 330px);
+					  left: calc(60vw - 300px);
+					  z-index: 10;
+					  display: block;
+					  background-color: #aad;
+					  box-shadow: 3px 3px 5px 5px
+					  	 var(--shadow-dark-color, #558);
+					  border-radius: 5px;
+					}
+.prefs_sections		{ float: left;
+					  overflow-y: auto;
+					  width: 110px;
+					  clear: right;
+					}
+.prefs_scroller		{ margin-left: 8px;
+					  overflow-y: auto;
+					  width: 500px;
+					}
+.prefs_table		{ white-space: nowrap;
+					  width: max-content;
+					}
+.prefs_table tr .c1 { width: 115px; }
+.prefs_table tr .c2 {  }
+.prefs_table tr  	{ width: 100%;
+					  display: block;
+					}
+.pinput				{ width: 860px; }
