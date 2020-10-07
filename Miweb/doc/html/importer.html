@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Media Center - Importer</title>
+	<link rel="stylesheet" href="mimc_doc.css">
+</head>
+<body dir="ltr" style="max-width:8.5in;margin-top:0.7874in; margin-bottom:0.7874in; margin-left:0.7874in; margin-right:0.7874in; background-color: white;">
+
+<p class="P1">Hymn Importer</p>
+<br>
+<table style="width:100%;">
+	<tr>
+		<td><button class="NAV" type="button" onclick="window.location.href = 'search.html#CHARACTERS';">&lt;&nbsp;Spanish Language Symbols</button></td>
+		<td style="text-align:center;"><button class="NAV" type="button" onclick="window.location.href = 'index.html';" ALIGN="center">Contents</button></td>
+		<td><button class="NAV" style="float:right;" type="button" onclick="window.location.href = 'delete_hymn.html';">Delete Hymn&nbsp;&gt;</button></td>
+	</tr>
+</table>
+<p class="P5">
+	The Importer is a wizard that is accessed from the <i>File &gt; Import</i> menu or by using the keyboard shortcut <code>&lt;Alt + i&gt;</code>. The import wizard is an advanced feature of the Media Center. It is used for importing a hymn into an SQLITE3 database that is compatible with the Media Center. The process of creating an empty Media Center database is currently a manual process, and is beyond the scope of this document. However, adding hymns to an existing database is what this section covers. The wizard progresses through 4 pages:
+	<ol>
+		<li><a href="#DESCRIPTION">Title and Authors</a></li>
+		<li><a href="#PARTS">Arrangement Order</a></li>
+		<li><a href="#MAP">Image Mapping</a></li>
+		<li><a href="#REVIEW">Summary and Upload</a></li>
+	</ol>
+</p>
+<p>
+	<span id="DESCRIPTION"; class="P3">Title and Authors</span>
+</p>
+<div style="width:65%; height:auto; display:block; float:right; padding-left:15px;">
+	<img style="display: block; height: auto; width: 100%; float:right;" alt="Hymn Description Page image" src="../image/importer_2.png"/>
+</div><p class="P5">
+	The Title and Authors page begins with three fields that describe the hymn: The first is the <i>Database/Book</i> dropdown list. The selection of the database is important because the importer will modify this database and the hymn will then <q>belong</q> to this database. The <i>Hymn Title</i> and <i>Number</i> fields must be filled in to proceed to the next page. The [Next] button will not be enabled until these two fields contain information. When the Title field contains 5 or more characters, the label text <q>Hymn Title:</q> will change from red to black in color. Only a single character is required in the Hymn Number field.
+</p>
+<p>
+	<span id="AUTHORS"; class="P3">Lyricist And Composer</span>
+</p>
+<p class="P5">
+	The Lyricist (author of the hymn text) and Composer (author of the music) fields are optional. If they are not filled in, the wizard will insert <q>Unknown</q> into the database. Similarly the date fields that follow each of the Lyricist and Composer fields are optional and will default to <q>Unknown</q> if not supplied by the user.
+</p>
+<p>
+	<span id="COPYRIGHT"; class="P3">Copyright Disclosure</span>
+</p>
+<div style="width:65%; height:auto; display:block; overflow-y:hidden; float:right; padding-left:15px;">
+	<img style="display: block; height: auto; width: 100%; float:right;" alt="Default Parts Sequence image" src="../image/importer_3.png"/>
+</div><p class="P5">
+	Copyright information is important for presenting the hymns in compliance with federal law. Many hymns are in the <i>public domain</i> because their copyright has expired, or the hymn was never copyrighted. However, it is necessary to site the copyright holder in the <i>Copyright Owner</i> field and enter the date that the copyright was issued in the <i>Date</i> field. There is an uneditable text field that displays the copyright string that will be included in presentation files that are generated from the Media Center program. If the hymn is copyrighted, click the Public Domain check button to reveal the copyright Date, Owner  and Sample fields. Notice that the labels next to the Date and Owner fields are red. This means they are required. If the hymn is actually <i>not</i> copyrighted, you can simply click the Public Domain check button again to hide the copyright controls. Otherwise, enter the copyright information in the provided fields and then click the Next button.
+</p>
+<p>
+	<span id="PARTS"; class="P3">Arrangement Order</span>
+</p>
+<div style="width:65%; height:300px; display:block; overflow-y:scroll; float:right; padding-left:15px;">
+	<img style="display: block; height: auto; width: 100%; float:right;" alt="Arrangement Order image" src="../image/importer_5.png"/>
+</div>
+<p class="P5">
+	The Arrangement Order page is where the common order of hymn parts are established. The image at right was captured after some selections were made. When this page is initially displayed, the <i>Part Sequence</i> list at right is empty. The <i>Part Names</i> list always contains these components. The part names are what are picked from to fill the <i>Part Sequence</i> list. This step governs the default arrangement of the song. Careful consideration should be given as to the customary or preferred order for the hymn composition to ensure that it is complete. Here are the steps that were taken to fill the <i>Part Sequence</i> list as it is illustrated above:
+	<ul>
+		<li>Double-click <b>Verse 1</b> in the <i>Part Names</i> list,</li>
+		<li>Double-click the <b>Chorus</b> in the <i>Part Names</i> list,</li>
+		<li>Double-click <b>Verse 2</b> in the <i>Part Names</i>list,</li>
+		<li>Double-click the <b>Chorus</b> (again).</li>
+		<li>Double-click <b>Verse 3</b> in the <i>Part Names</i> list,</li>
+		<li>Double-click the <b>Chorus</b> (third time).</li>
+		<li>Double-click <b>Optional Ending</b> in the <i>Part Names</i> list,</li>
+	</ul>
+</p>
+<p class="P5">
+	If a mistake is made while double-clicking the parts, a part (row) can be removed from the <i>Part Sequence</i> list by double-clicking the row.
+</p>
+<p class="P5">
+	The [Toggle Language] button below the <i>Part Names</i> list will switch between English and Spanish part names. You should ensure that you have the part names toggled to match the language the hymn text is written in before double-clicking to add part names, because this button only toggles the names in the <i>Part Names</i> list.
+</p>
+<p>
+	<span id="MAP"; class="P3">Image Mapping</span>
+</p>
+<div style="width:65%; height:auto; display:block; float:right; padding-left:15px;">
+	<img style="display: block; height: auto; width: 100%; float:right;" alt="Map Hymn Parts To Files image" src="../image/importer_6.png"/>
+</div>
+<p class="P5">
+	The mapping of hymn part names to image files is another critical step. If a file is incorrectly mapped to a part name, the presentation file generated for this hymn will never appear correctly when displayed on TV screens. If mapped properly, presentation generation of this hymn will display properly every time.
+</p>
+<p class="P5">
+	This page contains a [Browse] button and a <i>Images Folder</i> field just below it. When the browse button is pressed, it will open a folder selection dialog. The user is expected to select a folder that contains several PNG image files that represent the hymn parts. The file names are not important, but the PNG format is recommended. Generating the PNG files is beyond the scope of this document. When the folder is selected, the folder browser dialog (not shown) disappears and the <i>Image Files</i> list is filled with all of the PNG files found in the selected folder. DON'T MISS THIS: When the folder is selected, all of the image files that are listed in <i>Image Files</i> list are also DISPLAYED in the <a href="previewer.html">Previewer Window</a> of the Media Center application. This is extremely useful for ensuring that the proper number of pages are mapped to the respective hymn parts as described in the next paragraph.
+</p>
+<p class="P5">
+	When this page is initially displayed, the <i>Image Files</i> list is empty because the Media Center is waiting for the user to browse to a folder. The <i>Hymn Parts</i> list should contain exactly the list of parts that was created on the previous wizard page in the <i>Part Sequence</i> list, but without redundancy. For example, if you indicated that the <b>Chorus</b> was to be sung multiple times, Media Center remembers the order, but only displays the <b>Chorus</b> once in the <i>Part Names</i> list on this page. The purpose of this page is to match the files in the <i>Image Files</i> list with the respective part name in the <i>Hymn Parts</i> list. The steps below will explain the mapping of image files to hymn parts. But first, notice in the example illustrated above that <b>Verse 1</b> in red, is already selected. Selection in the <i>Part Names</i> column is indicated by the left-pointing arrow in the box. This means that any image files selected in the <i>Image Files</i> list will be mapped to <b>Verse 1</b>. Note also that if you hover the mouse over a file in the <i>Image Files</i> list, its background will change slightly to match the selected Part color. When you click on the file name in the <i>Image Files</i> column, the color of the row clicked will be changed to match the color of the part selected in the <i>Part Names</i> column. Remember also that the images should be displayed in the <a href="previewer.html">Previewer Window</a> of the Media Center window. Now the steps:
+	<ol>
+		<li>Look in the Previewer Window to see which image files comprise the first part (for example, Verse 1). Single-click on each file in the <i>Image Files</i> list that is part of <b>Verse 1</b>.</li>
+		<li>If an incorrect mapping is made, simply select the Part Name that the file in the <i>Image Files</i> list belongs to, and then click on the image file name. The color of the image file name will match the color of the part name.</li>
+		<li>Single-click the <b>Chorus</b> in the <i>Hymn Parts</i> list.</li>
+		<li>Repeat steps 1-4 until all image files are mapped to the correct parts.</li>
+	</ol>
+</p>
+<p class="P5">
+	The final mapping will be displayed on the following Summary and Upload page. And you can come back to this page using the [Back] button if a mistake was made. If you look at the image above again, you'll see another User Interface element called <i>Select Audio File</i>. This is filled in when the folder browser dialog is closed and a folder is selected. The wizard searches through the folder as it does for image files, and it populates the <i>Select Audio File</i> list with media files with MP3 (perhaps an actual live recording of a group performance of the hymn) and MID (usually generated by music writing software such as MuseScore) extensions. Often there are none or at most one. When it finds one in the folder, it will be selected by default. What this means is that the media file will be mapped to the entire hymn, just as the image files are mapped to the parts. This is how hymn audio samples are associated with the hymns in the database.
+</p>
+<p>
+	<span id="REVIEW"; class="P3">Summary and Upload</span>
+</p>
+<div style="width:100%; height:600px; display:block; overflow-y:scroll; float:right; padding-left:15px; margin-bottom:10px;">
+	<img style="display: block; height: auto; width: 100%; float:right;" alt="Map Hymn Parts To Files image" src="../image/importer_7.png"/>
+</div>
+<p class="P5">
+	This is the review page. It contains all of the information provided by the user through the wizard. It should be reviewed carefully before proceding further, because once the [Upload] button is pressed, the database will be filled with the information displayed here, whether it is correct or not. There is NO UNDO button here, but there is a <a href="delete_hymn.html">Delete</a> option in the <i>Edit &gt; Delete</i> menu to address such mistakes. But the wizard must be restarted to enter all of the information over again. So the message here is <u>scrutinize the data before pressing</u> [Upload]. When the [Upload] button is pressed, the new hymn will be written to the database, and the Importer Wizard window will close automatically.
+</p>
+<p class="P5">
+	At this point, the hymn is in the database and the Media Center will change the notebook view to the <img class="ICON_IL" src="../image/search_tab_icon.png" alt="Search Tab Icon"> search page. And the <a href="search.html">Search Page</a> hymn book dropdown will be switched to the database into which the hymn was uploaded. By scrolling to the hymn, you can check its appearance, test the audio sample and create a presentation file immediately.
+</p>
+<table style="width:100%;">
+	<tr>
+		<td><button class="NAV" type="button" onclick="window.location.href = 'search.html#CHARACTERS';">&lt;&nbsp;Spanish Language Symbols</button></td>
+		<td style="text-align:center;"><button class="NAV" type="button" onclick="window.location.href = 'index.html';" ALIGN="center">Contents</button></td>
+		<td><button class="NAV" style="float:right;" type="button" onclick="window.location.href = 'delete_hymn.html';">Delete Hymn&nbsp;&gt;</button></td>
+	</tr>
+</table>
+</body>
+</html>

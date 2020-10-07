@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8"/>
+	<title>Media Center Web</title>
+	<link rel="stylesheet" href="../css/mountain.css">
+	<link rel="stylesheet" href="../css/menu.css">
+	<link rel="stylesheet" href="../css/search.css">
+	<link rel="stylesheet" href="../css/previewer.css">
+	<link rel="stylesheet" href="../css/organizer.css">
+	<link rel="stylesheet" href="../css/preferences.css">
+	<link rel="stylesheet" href="../css/editor.css">
+</head>
+<body>
+
+<!-- Are you sure dialog -->
+<div class="confirm_win" id="confirm_win">
+	<div class="confirm_title" id="confirm_title">Confirm File Delete</div>
+	<div class="confirm_body" id="confirm_body"></div>
+	<div class="button_box">
+		<button class="flat_button" type="button" id="cancel">
+			<img src="../image/cancel.png"/>
+		</button>
+		<button class="flat_button" type="button" id="ok">
+			<img src="../image/ok.png"/>
+		</button>
+	</div>
+</div>
+<!-- About Version dialog -->
+<div class="confirm_win" id="about_dialog">
+	<div class="confirm_title">Mountain Island Media Center</div>
+	<div class="version">Version:</div>
+	<span class="about_value" id="version_value">1.2.5</span>
+	<div class="version">Created:</div>
+	<span class="about_value" id="version_date">08/31/20</span>
+	<div class="button_box">
+		<button class="flat_button" type="button" id="about_ok">
+			<img src="../image/ok.png"/>
+		</button>
+	</div>
+</div>
+<!-- Tool tip popup -->
+<div class="tool_tip" id="tool_tip" style="visibility: hidden;">
+	<p class="tool_tip_msg" id="tool_tip_msg"></p>
+</div>
+<!-- Main menu: File/Edit/Help styled in menu.css-->
+<nav class="nav">
+	<span class="flat_button" id="file_menu_button">File</span>
+	<span class="flat_button" id="edit_menu_button">Edit</span>
+	<span class="flat_button" id="help_menu_button">Help</span>
+</nav>
+<div class="menu" id="file_menu">
+	<table class="menu_table" id="file_table">
+		<tr id="imports"><td>Import...</td><td>Ctrl + i</td></tr>
+		<!--tr id="prefs_item"><td>Preferences...</td><td>Alt + p</td></tr-->
+		<tr id="quit_item"><td>Quit...</td><td>Alt + q</td></tr>
+	</table>
+</div>
+<div class="menu" id="edit_menu">
+	<table class="menu_table" id="edit_table">
+		<tr id="delete"><td>Delete Hymn...</td></tr>
+	</table>
+</div>
+<div class="menu" id="help_menu">
+	<table class="menu_table" id="help_table">
+		<tr id="about"><td>About...</td></tr>
+		<tr id="guide"><td>User Guide...</td><td>Alt + g</td></tr>
+	</table>
+</div>
+
+<!-- Delete hymn dialog -->
+<div class="confirm_win" id="delete_win">
+	<div class="confirm_title" id="hymn_delete_title">Select Hymn To Delete</div>
+	<div class="confirm_body" id="hymn_delete_body">
+		<p>The following hymn will be permanently deleted from the database/book:</p>
+		<span class="label">Book:</span>
+		<span class="bold" id="delbook"></span>
+		<span class="label">Number:</span>
+		<span class="bold" id="delnum"></span>
+		<span class="label">Title:</span>
+		<span class="bold" id="deltitle"></span>
+		<p class="del_bottom">Confirm to delete the hymn, or cancel to abort.</p>
+	</div>
+	<div class="button_box">
+		<button class="flat_button" type="button" id="del_cancel">
+			<img src="../image/cancel.png"/>
+		</button>
+		<button class="flat_button" type="button" id="del_ok">
+			<img src="../image/ok.png"/>
+		</button>
+	</div>
+</div>
+
+<!-- Preferences dialog. It's a shell that is built with Javascript -->
+<div class="preferences_win" id="preferences_win">
+	<div class="confirm_title">Preferences and Defaults</div>
+	<div class="prefs_sections" id="prefs_sections"></div>
+	<div class="prefs_scroller" id="prefs_scroller">
+		<table class="prefs_table" id="prefs_table">
+		</table>
+	</div>
+	<div class="button_box">
+		<button class="flat_button" type="button" id="prefs_cancel">
+			<img src="../image/cancel.png"/>
+		</button>
+		<button class="flat_button" type="button" id="prefs_ok">
+			<img src="../image/ok.png"/>
+		</button>
+	</div>
+</div>
+
+<!-- Notebook tabs styled in menu.css-->
+<div class="tabs">
+	<div class="tab_button" id="preview_button">
+		<img src="../image/slideshow.png" id="preview_button"/>
+	</div>
+	<div class="tab_button" id="search_button">
+		<img src="../image/musical_notes.png" id="search_button"/>
+	</div>
+	<div class="tab_button" id="editor_button">
+		<img src="../image/editor.png" id="editor_button"/>
+	</div>
+	<div class="tab_button" id="organize_button">
+		<img src="../image/organizer.png" id="organize_button"/>
+	</div>
+</div>
+
+<!-- Hymn count floating tooltip -->
+<div class="toolbar">
+	<div class="org_ctrls">
+		<button class="flat_button" type="button" id="org_trash" disabled>
+			<img src="../image/trash.png"/>
+		</button>
+	</div>
+	<div class="editor_ctrls">
+		<!--All editor controls are floated right, so they are positioned
+		  here in reverse order of their appearance on the page! -->
+		<button class="flat_button" type="button" id="editor_to_org">
+			<img src="../image/to_organizer.png"/>
+		</button>
+		<input type="number" class="input" id="font_sz" min="25" max="55" step="5">
+		<span class="lbl_font_sz">Font Size:</span>
+		<button class="flat_button" type="button" id="editor_erase">
+			<img src="../image/eraser.png" id="eraser_img"/>
+		</button>
+		<button class="flat_button" type="button" id="add_paragraph">&para;&nbsp;+</button>
+		<div class="sel_container" id="version_container">
+			<select class="version", id="version"></select>
+			<span class="downarrow" id="version_arrow">▼</span>
+		</div>
+		<button class="flat_button" type="button" id="editor_bible">
+			<img src="../image/bible16.png" id="bible_img"/>
+		</button>
+		<input type="text" class="input" id="reference" size=18 placeholder="e. g. Romans 10:17" value="Romans 10:1-6">
+		<div class="ratio_div">
+			<span class="ratio_label">Aspect Ratio</span>
+			<select class="ratio_combo" id="ratio"></select>
+			<span class="downarrow" id="edit_ratio_arrow">▼</span>
+		</div>
+	</div>
+	<div class="search_ctrls">
+		<div class="srch_ratio_div">
+			<span class="ratio_lsearch">Aspect Ratio</span>
+			<select class="ratio_search", id="ratio_search"></select>
+			<span class="downarrow" id="aspectarrow">▼</span>
+		</div>
+		<div class="parts_ctrls">
+			<button class="flat_button" type="button" id="parts_erase">
+				<img src="../image/eraser.png"/>
+			</button>
+			<button class="flat_button" type="button" id="parts_preview" disabled>
+				<img src="../image/preview_transparent.png" class="eyeball"/>
+			</button>
+			<button class="flat_button" type="button" id="parts_sound" disabled>
+				<img src="../image/audio_transparent.png"/>
+			</button>
+		</div>
+		<div class="arranger_ctrls">
+			<button class="flat_button" type="button" id="arranger_erase">
+				<img src="../image/eraser.png"/>
+			</button>
+			<button class="flat_button" type="button" id="arranger_preview" disabled>
+				<img src="../image/preview_transparent.png" class="eyeball"/>
+			</button>
+			<button class="flat_button" type="button" id="arr_to_org" disabled>
+				<img src="../image/to_organizer.png"/>
+			</button>
+		</div>
+	</div>
+</div>
+
+<!-- Previewer tab -->
+<div class="previewer tab", id="previewer">
+	<div class="title_bar">
+		<!-- These 2 are floated right, so they appear here in reverse order -->
+		<div class="subheader" id="preview_subtitle"></div>
+		<div class="header" id="preview_header"></div><!-- Song title here -->
+	</div>
+	<div class="scroller" id="scroller">
+		<!-- Javascript insert page images here -->
+	</div>
+	<div class="splash" id="splash">
+		<div id="splash-image"></div>
+		<div id="splash-label-1"></div>
+		<div id="splash-label-2"></div>
+	</div>
+</div>
+
+<!-- Search tab, styled in search.css -->
+<div class="search tab">
+	<!-- Hymns div contains search list and arranger lists -->
+	<div class="hymns" id="hymn_div">
+	<!--Filter for searching songs, styled in hymns.css -->
+		<div class="filter">
+			<span>Filter:</span>
+			<input type="text" id="filter_text"/>
+		</div>
+		<!-- The book combobox above the hymns list -->
+		<div class="srch_hymn_select">
+			<select class="bookcombo", id="books"></select>
+			<span class="downarrow" id="bookarrow">▼</span>
+			<div class="hymn_count" id="hymn_count" ></div>
+		</div>
+		<!-- Hymn list scrolled, styled in search.css -->
+		<div class="song_div" id="song_div">
+		</div>
+		<!-- Meta contains the hymn meta-data, styled in search.css -->
+		<div class="meta" id="meta_data">
+			<div class="row">
+				<span class="label mtitle">Title:</span>
+				<span class="mtitle value" id="title"></span>
+			</div>
+			<div class="row">
+				<span class="label">Number:</span>
+				<span class="value" id="num"></span>
+			</div><br>
+			<div class="row">
+				<span class="label">Lyricist:</span>
+				<span class="value" id="lyricist"></span>
+			</div><br>
+			<div class="row">
+				<span class="label">Composer:</span>
+				<span class="value" id="composer"></span>
+			</div><br>
+			<div class="row">
+				<span class="label">Copyright:</span>
+				<span class="value" id="copyright"></span>
+			</div>
+		</div>
+	</div>
+	<table class="arranger">
+		<thead class="arranger_title">
+			<tr>
+				<td class="table_title">Parts</td>
+				<td></td>
+				<td class="table_title">Arranger</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class="list_size">
+				<td class="parts_column" id="parts_column"></td>
+				<td class="button_column" id="button_column">
+					<button type="button" class="add_part" id="add_part" disabled>
+						<img src="../image/right_arrow_transparent.png"/>
+					</button>
+					<button type="button" class="remove_part" id="remove_part" disabled="true">
+						<img src="../image/left_arrow_transparent.png"/>
+					</button>
+				</td>
+				<td class="arranger_column" id="arranger_column">
+					<table class="arranger_table" id="arranger_table"></table>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<div class="editor tab" id="editor">
+	<textarea class="e_scroller" id="e_scroller" placeholder="Your scripture/text here."></textarea>
+	<div class="footer">
+		<div class="ref_div" id="ref_div"></div>
+		<div class="ver_div" id="ver_div"></div>
+	</div>
+</div>
+<div class="organizer tab" id="organizer">
+</div>
+<script src="../javascript/preferences.js"></script>
+<script src="../javascript/shared.js"></script>
+<script src="../javascript/organizer.js"></script>
+<script src="../javascript/previewer.js"></script>
+<script src="../javascript/editor.js"></script>
+<script src="../javascript/search.js"></script>
+<script src="../javascript/tabs.js"></script>
+<script src="../javascript/menu.js"></script>
+<script src="../javascript/drag_drop.js"></script>
+</body>
+</html>

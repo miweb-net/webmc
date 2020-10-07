@@ -1,0 +1,37 @@
+/* Styles for the previewer page/tab */
+
+.previewer          { position: absolute;
+                      bottom: 4px;
+                      left: 8px;
+                      top: 65px;            
+                      width: calc(100vw - 16px);
+                      text-align: center;
+                    }
+.title_bar          {  }
+.header             { float: right;
+                      width: calc(80% - 150px);
+                      text-align: center;
+                      font: bold 22pt "sans-serif";
+                      margin-right: 30px;
+                    }
+.subheader          { width: 150px;
+                      float: right;
+                      font-style: italic;
+                      margin-top: 10px;
+                    }
+.scroller           { height: calc(100% - 45px);
+                      margin-top: 10px;
+                      overflow: auto;
+                      width: 100%;
+                    }
+.page_number        { font-style: italic;
+                      float: left;
+                      width: 70px;
+                      text-align: left;
+                      margin-top: 19%;
+                    }
+.page               { width: calc(100% - 70px);
+                      float: left;
+                    }
+.odd                { background-color: transparent; }
+.even               { background-image: linear-gradient(to top left, #88a, #ddf); }

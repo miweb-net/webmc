@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Media Center - Search</title>
+	<link rel="stylesheet" href="mimc_doc.css">
+</head>
+<body dir="ltr" style="max-width:8.5in;margin-top:0.7874in; margin-bottom:0.7874in; margin-left:0.7874in; margin-right:0.7874in; background-color: white;">
+
+<p class="P1">Search For Hymns</p>
+<p class="P2"></p>
+<br>
+<table style="width:100%;">
+	<tr>
+		<td><button class="NAV" type="button" onclick="window.location.href = 'introduction.html';">&lt;&nbsp;Introduction</button></td>
+		<td style="text-align:center;"><button class="NAV" type="button" onclick="window.location.href = 'index.html';" ALIGN="center">Contents</button></td>
+		<td><button class="NAV" style="float:right;" type="button" onclick="window.location.href = 'arranger.html';">Arranger&nbsp;&gt;</button></td>
+	</tr>
+</table>
+<br><br>
+<p><span id="HYMNBOOK"; class="P3">Hymn Book Collection</span>
+	<img style="padding-bottom: 7px; width:46%; display:block; float:right; position:relative;" src="../image/search_combo_and_filter.png" alt="Comboboxing" align="middle">
+</p>
+<p class="P5">
+	The hymn book dropdown selects a hymnal, which is actually a database that (usually) contains the hymns for a specific hymnal. However, an arbitrary compilation of hymns can be stored in a database. Creating a custom database of hymns is beyond the scope of this document. Please occasionally check back at the Media Center Home page for this upcoming document.
+</p>
+<div style="width: 100%; float: right; position:relative;" class="fr1" id="HYMNLIST"><img style="display: block; height: auto; width: 40%; padding-top: 10px; padding-left: 10px;" ALIGN="right" alt="" src="../image/search_list.png"/>
+	<p class="P5">
+		This dropdown box provides the method for selecting which database contents are being displayed in the listbox below it. The list of songs figure is at the right. If the desired hymn is not displayed in the list and the Title Filter box (above the Hymn Book Collection) is empty, the hymn is not contained in the selected database. It may be contained in another database. Simply select another database and search within the new list of hymns for the desired title. If there are characters in the Title Filter box, they should be deleted so that all available songs in the selected database will be displayed. The <a href="#HYMNSEARCHFUNC">Hymns Search Functions</a> describes more about advanced hymn title searching using the Title Filter box.
+	</p>
+	<p class="P5">
+		Clicking on a song title in the list of hymns will causes the song information to be displayed in the box below the list of songs. This information is referred to as the hymn meta-data. It contains the title, number, authors and dates, as well as copyright information for the selected hymn.
+	</p>
+	<p class="P5">
+		The search list only supports selection of a single hymn. However, multiple hymns can be combined in the <a href="arranger.html#ARRANGER">Arranger</a>. Double-clicking a hymn in the search list will cause the selected hymn to be added to the <a href="arranger.html#ARRANGER">Arranger</a>. See the <a href="arranger.html#ARRANGER">Arranger Section</a> to learn more about customizing the presentation of single hymns and creating medleys, among its features.
+	</p>
+</div>
+
+<p>
+	<span id="HYMNSEARCHFUNC"; class="P3">Hymns Search Functions</span>
+</p>
+<p class="P5">
+	The Media Center provides a listbox for displaying the titles in the selected hymnal (see <a href="#HYMNBOOK">Hymn Book Dropdown</a>, above. The purpose of the Media Center is to enable the displaying of hymns, scriptures and other presentation files to TVs, the Hymns Search Listbox is key to that process. When a hymn title in the listbox is double-clicked, the Media Center shows that title as selected in the listbox, and displays the hymn's related data called meta-data below the listbox, and also populates the <a href="arranger.html#ARRANGER">Arranger</a> listboxes with the image parts that comprise the hymn.
+</p>
+<p>
+	<span id="HYMNFILTER"; class="P3">Hymn Filter</span>
+</p>
+<p class="P5">
+	Some hymn books (databases) contain a large set of songs, making it difficult to find a particular hymn -- especially by title. In these cases, part of the hymn title can typed in the Title Filter, which is an entry box located just above the Hymn Book Collection. As characters are typed, the list of hymns displayed in the Search Listbox gets shorter because titles are being filtered out that don't match what was typed in the Title Filter box. Deleting characters from the Title Filter entry causes the list to increase as more titles will match the characters in the Filter.
+</p>
+<p>
+	<span id="CHARACTERS"; class="P3">Special Character Support</span></p>
+<p class="P5">
+	The Media Center supports entering special characters used in the spanish language by pressing the &lt;Alt&gt; key in combination with the certain letter keys on the keyboard.
+</p>
+<p class="P5">
+	<u>Extended Latin Supported Characters and how to enter them</u>:<br>
+	<div class="P_INSET"; style="display: block; float:right; width:40%; margin-top:10px;" >
+		The Filter Title field, the <a href="importer.html">Importer</a> Hymn Title, Lyricist and Composer fields all support the display and common method of inserting these special characters.
+	</div>
+	<table>
+		<tr><td>á</td><td class="CODE">&lt;Alt + a&gt;</td></tr>
+		<tr><td>é</td><td class="CODE">&lt;Alt + e&gt;</td></tr>
+		<tr><td>í</td><td class="CODE">&lt;Alt + i&gt;</td></tr>
+		<tr><td>ó</td><td class="CODE">&lt;Alt + o&gt;</td></tr>
+		<tr><td>ú</td><td class="CODE">&lt;Alt + u&gt;</td></tr>
+		<tr><td>ñ</td><td class="CODE">&lt;Alt + n&gt;</td></tr>
+		<tr><td>¡</td><td class="CODE">&lt;Alt + !&gt;</td></tr>
+		<tr><td>¿</td><td class="CODE">&lt;Alt + ?&gt;</td></tr>
+	</table>
+</p>
+<br><br>
+<table style="width:100%;">
+	<tr>
+		<td><button class="NAV" type="button" onclick="window.location.href = 'introduction.html';">&lt;&nbsp;Introduction</button></td>
+		<td style="text-align:center;"><button class="NAV" type="button" onclick="window.location.href = 'index.html';" ALIGN="center">Contents</button></td>
+		<td><button class="NAV" style="float:right;" type="button" onclick="window.location.href = 'arranger.html';">Arranger&nbsp;&gt;</button></td>
+	</tr>
+</table>
+</body>
+</html>

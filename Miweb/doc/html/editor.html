@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Media Center - Editor</title>
+	<link rel="stylesheet" href="mimc_doc.css">
+</head>
+<body dir="ltr" style="max-width:8.5in;margin-top:0.7874in; margin-bottom:0.7874in; margin-left:0.7874in; margin-right:0.7874in; background-color: white;">
+
+<p class="P1">Scripture Editor</p>
+<p class="P2"></p>
+<br>
+<table style="width:100%;">
+	<tr>
+		<td><button class="NAV" type="button" onclick="window.location.href = 'search.html';">&lt;&nbsp;Search</button></td>
+		<td style="text-align:center;"><button class="NAV" type="button" onclick="window.location.href = 'index.html';" ALIGN="center">Contents</button></td>
+		<td><button class="NAV" style="float:right;" type="button" onclick="window.location.href = 'arranger.html';">Arranger&nbsp;&gt;</button></td>
+	</tr>
+</table>
+<br>
+<p id="EDITOR"><span class="P3">Scripture Editor Functions</span></p>
+<div>
+	<img style="display: block; width: 85%; padding: 10px; margin: 0 auto;" alt="Scripture Editor Image" src="../image/editor.png"/>
+</div>
+<p class="P5">
+	The Scripture Editor is displayed when the notebook tab icon <img class="ICON_IL" alt="Scripture Editor Tab" src="../image/edit.png"/>is pressed or navigated to in any manner (it's the active tab at the top of the figure above). The editor's largest feature is the text area. The image shows a scripture being displayed and a scrollbar on the right side of the window. The scrollbar will appear only when there is additional content that is not in view. In this case, the passage reference (Romans 10:1-3) is not in view and the scrollbar could be used to see it.
+</p>
+<p id="VERSION"><span class="P3">Change Bible Version</span></p>
+<p class="P5">
+	<img style="float:right; width: 10%; padding: 10px;" alt="Bible Versions List" src="../image/bible_version_list.png"/>The bible version dropdown box <img class="ICON_IL" style="width: 8%;" alt="Bible Version Dropdown" src="../image/bible_version_combo.png"/> is at the bottom of the Scripture Editor page. It contains a list of available bible versions that have been installed on the computer. The preferred bible version is displayed when the program is started. The preferred bible version can be set in <a href="preferences.html">Preferences</a>. Clicking on the dropdown will display the list of bible versions, as illustrated at right and a different version can be selected by mouse click or keyboard scrolling while the list is displayed.
+</p>
+<p id="LOOKUP"><span class="P3">Scripture Look-up</span></p>
+<p class="P5">
+	The editor has additional controls below the large text area. At the lower-left of the editor is an entry widget used for typing a reference, like Hebrews 11:1. To enter a new passage, triple-click (or type <code>&lt;Ctrl + a&gt;</code>) in the entry box. This selects all of the text in it. Then press the <code>&lt;Backspace&gt;</code> key, or just begin typing in your passage reference. The Scripture Editor recognizes many abbreviated book names as well as verse ranges. For example, Heb 11:1-3 will display the first 3 verses of Hebrews the 11th chapter. To make the referenced scripture display, press the <code>&lt;Enter&gt;</code> key in the Reference entry widget, or click on the <img class="ICON_IL" alt="Scripture Lookup Button" src="../image/bible.png"/> button to its right. <i>Note that looking up a scripture causes all <a href="#PAGE_BREAK"> manual page breaks</a> to be removed, and automatic page breaks are inserted to fit the new text on presentation pages (slides) using the current font</i>.
+</p>
+<p id="COPY"><span class="P3">Copy Text to/from the Editor</span></p>
+<p class="P5">
+	The Scripture Editor window is also a general purpose text display area. This means that arbitrary text can be typed in, copied from, and pasted to this editor area. For example, the user can copy text from a text editor or other program using <code>&lt;Ctrl + c&gt;</code>, and then click the mouse in the editor where the copied text should be inserted, and then paste copied text in the editor using <code>&lt;Ctrl + v&gt;</code>. The reverse is true as well. A reference can be looked up (see <a href="#LOOKUP">above</a>), and the scripture text can be selected with the mouse by clicking and dragging the mouse to include the desired text. Then press <code>&lt;Ctrl + c&gt;</code> to copy the text into the clipboard, and then click on another program window (e.g. a text editor) and press <code>&lt;Ctrl + v&gt;</code> to insert the text.
+</p>
+<p id="PAGE_BREAK"><span class="P3">Add/Remove Page Breaks</span></p>
+<p class="P5">
+	A page break symbol <i>¶</i> is displayed when large fonts (discussed in the next paragraph) are used, or long scripture passages are requested. This is the paging symbol used to tell the presentation software where to divide pages of content. The Media Center automatically repaginates the scripture every time a reference lookup is requested, or a font size change is made using the controls at the far right of the editor. The user can override the automatic page breaks manually by selecting each one and pressing the <code>&lt;Backspace&gt;</code> or <code>&lt;Delete&gt;</code> key to delete it. Page breaks (<i>¶</i>) can be manually inserted into the text. <b>Manual page breaks will not be moved or deleted by the Media Center when automatic repagination occurs</b>. However, when a new scripture is <a href="#LOOKUP">looked up</a>, all manual page breaks are removed when the new scripture is displayed. Adding manual page breaks is done by clicking the mouse in the Scripture Editor window area to set the cursor location, and then pressing the <img class="ICON_IL" style="width:6%"alt="Page Break Button image"  src="../image/page_break_button.png"/> button. Note that when altering the automatic pagination feature, the presentation program will display it in nearly the same font size as it is displayed in the Scripture Editor and will only create new slides (pages) if it encounters the <i>¶</i> symbol.
+</p>
+<p id="FONT_SIZE"><span class="P3">Change Font Size</span></p>
+<p class="P5">
+	Font size and page control are tightly integrated in the Media Center. Requesting a reference as <a href="#LOOKUP">described above</a>, the Media Center will use the current font size managed by the spin box <img class="ICON_IL" style="width:18%;" src="../image/font_controls.png" alt="Font Size Controls image"> to fit the requested verse(s) to a typical TV or projector screen. If the text will not fit on a single presentation page, the Media Center will automatically insert page breaks (indicated by the <i>¶</i> symbol) at optimum break points in the text. If the font size appears larger or smaller than desired, the controls on the right side of the displayed value can select a larger (+) or smaller (-) font. When doing so, the text will be repaginated to fit the page based on the new font size.
+</p>
+<p id="GENERATE"><span class="P3">Generate Scripture Presentation</span></p>
+<p class="P5">
+	After the text size and content are satisfactory, it's time to generate the presentation file. Just as with hymn presentations, the Scripture Editor has the same button <img class="ICON_IL" src="../image/to_organizer_button.png" alt="Show In Organizer"> to generate scripture presentation files for display. After clicking the generate button, the view is automatically switched in the Media Center to the <a href="organizer.html">Organizer</a>. The Media Center performs a check to ensure that the scripture presentation file doesn't already exist. If it does, a confirmation dialog is displayed, enabling the user to continue or abort the overwrite operation. If the file exists, and is overwritten, the icon remains in the same location it was in the <a href="organizer.html">Organizer</a>. If it is a new file, the scripture icon is appended to the <a href="organizer.html">Organizer</a> list.
+</p>
+<p id="EXTERNAL"><span class="P3">External Presentation Editing</span></p>
+<p class="P5">
+	The Media Center generates a standard presentation file with a .pptx extension, which can be edited outside of the Media Center program to add graphics and other media content. The location of the scripture presentation files is determined in the <a href="preferences.html">Preferences</a>. The Media Center Scripture Editor does not read files from the folder location. It only writes files to the folder. So once a file is generated, the Scripture Editor cannot (directly) read its contents. However, the text (only) can be copied manually back in to the Scripture Editor by copying it from the presentation program window and pasting the text into the Scripture Editor <a href="#COPY">as described above</a>. The <a href="organizer.html#DELETE">Organizer</a> can delete the scripture files that have been created in the Editor.
+<table style="width:100%;">
+	<tr>
+		<td><button class="NAV" type="button" onclick="window.location.href = 'search.html';">&lt;&nbsp;Search</button></td>
+		<td style="text-align:center;"><button class="NAV" type="button" onclick="window.location.href = 'index.html';" ALIGN="center">Contents</button></td>
+		<td><button class="NAV" style="float:right;" type="button" onclick="window.location.href = 'arranger.html';">Arranger&nbsp;&gt;</button></td>
+	</tr>
+</table>
+</body>
+</html>

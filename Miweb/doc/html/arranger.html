@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Media Center - Arranger</title>
+	<link rel="stylesheet" href="mimc_doc.css">
+</head>
+<body dir="ltr" style="max-width:8.5in;margin-top:0.7874in; margin-bottom:0.7874in; margin-left:0.7874in; margin-right:0.7874in; background-color: white;">
+
+<p class="P1">Arrange Hymn Parts</p>
+<p class="P2"></p>
+<br>
+<table style="width:100%;">
+	<tr>
+		<td><button class="NAV" type="button" onclick="window.location.href = 'editor.html';">&lt;&nbsp;Scripture Editor</button></td>
+		<td style="text-align:center;"><button class="NAV" type="button" onclick="window.location.href = 'index.html';" ALIGN="center">Contents</button></td>
+		<td><button class="NAV" style="float:right;" type="button" onclick="window.location.href = 'previewer.html';">Previewer&nbsp;&gt;</button></td>
+	</tr>
+</table>
+
+<p>
+	<span id="ARRANGER" class="P3">Arranger Functions</span>
+</p>
+<p class="P5">
+	The Arranger is where hymn parts (e.g. Verse 1, Verse 2, Chorus, etc.) can be included in or excluded from the generated presentation file. The Arranger contains 2 list boxes and 2 buttons between them to control what parts of the hymn will go in the presentation file.
+</p>
+<div style="width: 100%; float: left; position:relative;"  id="ArrangerLists">
+	<img style="display: block; height: auto; width: 67%; padding: 0px 14px 10px 0px;" ALIGN="left" alt="" src="../image/arranger.png"/>
+	<p class="P5">
+		The left listbox (Parts) contains all of the available parts of the hymn. The right listbox (Arranger) contains the parts in the sequence they will be displayed -- in musical terms, this is the <i>arrangement</i>. Notice in the screen shot at the left that the Arranger listbox contains 5 Chorus (Coro) rows. This means that the hymn is usually sung in the sequence shown: Verse 1, then the Chorus, Verse 2 and the Chorus again, etc. But this usual sequence can be altered in a number of ways. The following sectionso on this page describe how to manipulate the content in the two Arranger listboxes.
+	</p>
+</div>
+<p>
+	<span id="REMOVE_PARTS"; class="P3">Remove Parts from an Arrangment (Hymn)</span>
+</p>
+<div>
+	<p class="P5">
+		It may be desired by the hymn director/song leader at times, to lead only selected parts of a hymn.
+		<img style="width:35%; padding: 10px; word-wrap:left; float:right;" src="../image/arranger_selection.png">
+		One example is to sing the Coro only at the end of the hymn. If the default (usual) way is used, the presentation will be generated with the Coro between each verse. To change the presentation file to show the Coro only at the end of the hymn, select each Coro row in the Arranger listbox, except for the one following Verso 5 in this example. The listbox selection should look like the image on the right side of this document. 
+		To remove the selected parts from the Arranger listbox, press the <img class="ICON_IL" src="../image/arranger_remove.png" alt="Arranger Remove"> button. All that should remain in the right Arranger listbox in this example is: Versos 1 - 5, and Coro.
+	</p>
+</div>
+<p>
+	<span id="ADD_PARTS"; class="P3">Add Parts to an Arrangement (Hymn)</span>
+</p>
+<p class="P5">
+	<img style="display: block; height: auto; width: 60%; padding: 10px; background-color: #fff;" ALIGN="right" alt="" src="../image/add_part_to_arranger.png"/>
+	Parts can also be added to the Arranger listbox by selecting one or more parts from the Parts listbox and clicking the <img class="ICON_IL" src="../image/arranger_add.png" alt="Arranger Add"> button. Notice that added parts are always appended to the bottom of the Arranger list. The next paragraph explains how to place them in the desired order.
+</p>
+<p>
+	<span id="MOVE_PARTS"; class="P3">Move Parts within an Arrangement (Hymn)</span>
+</p>
+<p class="P5">
+	Parts can be moved anywhere within the Arranger listbox by dragging and dropping rows within the Arranger listbox. To perform a move, first press and hold the mouse button down on one of the rows in the Arranger listbox. While holding the mouse button down, move the mouse up or down the list. When the mouse is hovering over the location you want the dragged item to be, release the mouse button. Perhaps the best way to learn this process is through practicing. A step-by-step practical <a href="medley100_101.html">medley example</a> illustrates these steps.
+</p>
+<p>
+	<span id="CLEAR_ARRANGER"; class="P3">Clear Arranger Lists</span>
+</p>
+<p class="P5">
+	Either or both of the Arranger listboxes can be emptied of all content by pressing the <img class="ICON_IL" src="../image/eraser.png" alt="Arranger Add"> button below each listbox. When the button below one of the listboxes is pressed, all of the rows in the list will be removed.
+</p>
+<p>
+	<span id="PREVIEW_ARRANGEMENT"; class="P3">Part or Arrangement Preview</span>
+</p>
+<p class="P5">
+	Both Part and Arranger listboxes have a <img class="ICON_IL" src="../image/preview_part.png" alt="Preview Part" onclick="window.location.href = 'previewer.html';"> below them for viewing selected information. When pressing button below the Parts listbox, the music score pages of the <u>selected</u> part(s) will be displayed in the <a href="previewer.html">Preview Window</a>. If the <img class="ICON_IL" src="../image/preview_part.png" alt="Preview Part "onclick="window.location.href = 'previewer.html';"> below the Arranger listbox is pressed, all rows in the Arranger listbox -- the <i>arrangement</i> -- are displayed in the <a href="previewer.html">Preview Window</a>. In either case, of course the <a href="previewer.html">Preview Window</a> is given focus (switched to) and the appropriate pages are displayed there. The arranger can be brought back into view, by clicking the <img class="ICON_IL" src="../image/search_tab_icon.png" alt="Search Tab Icon"> icon in the notebook tabs just below the program menu.
+</p>
+<p>
+	<span id="AUDITION"; class="P3">Play Sound Sample</span>
+</p>
+<p class="P5">
+	<img style="display: block; height: auto; width: 61%; padding: 10px; background-color: #fff;" ALIGN="right" alt="" src="../image/medley3.png"/>
+	The Parts listbox has a Sound Sampler <img class="ICON_IL" src="../image/preview_part.png" alt="Preview Composition"> or Audition button below it. When pressed, this button will start a player program that will play the hymn that is selected in the Parts listbox. We'll borrow the <a href="medley100_101.html">medley</a> example to illustrate the selected hymn. The selected hymn in the Parts listbox is Hymn 101. The text of the selected hymn is in <b>bold font</b>, it will often have a border around it, and  usually has a slightly different background color from all other hymns in the Parts listbox. These styling features can be changed, so there <i>could be</i> a certain amount of ambiguity as to what is selected in the Parts listbox if the theme has been customized. This is the primary reason for caution when editing one of the provided themes.
+	<br>A final note on the sample music that is played: If the file type is MIDI, the song sample will exactly match the displayed music score. It will include the first verse and chorus in most cases. There are rare instances where the entire hymn is captured in MIDI format.
+</p>
+<p>
+	<span id="TO_ORGANIZER"; class="P3">Generate Hymn Presentation File</span>
+</p>
+<p class="P5">
+	The final step in creating a hymn presentation file is to press the <img class="ICON_IL" src="../image/to_organizer_button.png" alt="Show In Organizer"> button, located just below the Arranger listbox. Under most circumstances, pressing this button will generate the presentation file and switch the view to the <a href="organizer.html">Organizer Tab</a>. The icon will appear at the end of this Organizer list. But if the same hymn has already been generated -- even with different parts in its arrangement -- it will have the same name. When this is the case, a dialog is presented to the user to allow the program to overwrite the existing file. Pressing the <q>Yes</q> button will overwrite the file. So if unsure, press <q>No</q>. Note that the Media Center never overwrites or deletes a hymn in its database, so if a hymn presentation file (generated by the Media Center) is overwritten or deleted, it can be generated again from the the database.
+</p>
+<div class="CENTERED">
+	<img style="display: block; height: auto; width: 50%;
+	margin: 0 auto;" alt="" src="../image/overwrite_dialog.png"/>
+</div>
+<p>
+	<span id="MEDLEY_OVERVIEW"; class="P3">Creating Medley Arrangements</span>
+</p>
+<p class="P5">
+	This final subtopic of the Arranger, is an advanced feature. In addition to being able to arrange the order of the verses, chorus, multiple endings, etc. of a single hymn, the Parts and Arranger listboxes work together in a similar way to create medleys from multiple hymns. The <a href="medley100_101.html">medley example</a> illustrates the following steps. The steps to creating a medley:<br>
+<ol><li><a href="introduction.html#APP_IMAGE">Select the first hymn</a>.</li>
+	<li>Move parts around in the Arranger as desire (<a href="#MOVE_PARTS">see how</a>).<i> Do not remove the first hymn from the Parts listbox prior to the next step</i>.</li>
+	<li>Select the second hymn by double-clicking it in the Search listbox.</li>
+	<li>Click on the <i>parts</i> in the Parts listbox to be added to the bottom of the Arranger listbox.</li>
+	<li>Rearrange the order of parts contained in the Arranger as desired.</li>
+	<li>(optional) Repeat steps 3-5 to add additional hymn parts to the arrangement.</li>
+	<li>Click the <img class="ICON_IL" src="../image/to_organizer_button.png" alt="Show In Organizer"> button to generate the medley presentation file.</li>
+</ol>
+</p>
+<table style="width:100%;">
+	<tr>
+		<td><button class="NAV" type="button" onclick="window.location.href = 'editor.html';">&lt;&nbsp;Scripture Editor</button></td>
+		<td style="text-align:center;"><button class="NAV" type="button" onclick="window.location.href = 'index.html';" ALIGN="center">Contents</button></td>
+		<td><button class="NAV" style="float:right;" type="button" onclick="window.location.href = 'previewer.html';">Previewer&nbsp;&gt;</button></td>
+	</tr>
+</table>
+</body>
+</html>

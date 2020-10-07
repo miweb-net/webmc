@@ -1,0 +1,29 @@
+
+
+*			{ cursor: none; }
+html		{ background-color: black; }
+body		{ overflow: hidden; }
+.title		{ font-size: 65px;
+			  text-align: center;
+			  background-color: #999;
+			  width: 100vw;
+			  margin-left: -8px;
+			  margin-top: -8px;
+			  position: absolute;
+			}
+.page		{ font-size: 65px;
+			  font-family: serif;
+			  background-color: black;
+			  color: white;
+			  position: absolute;
+			  top: 95px;
+			  visibility: hidden;
+			}
+.version	{ font-style: italic;
+			  font-size: 55px;
+			  background-color: black;
+			  color: white;
+			  position: absolute;
+			  top: calc(100vh - 77px);
+			  right: 10px;
+			}

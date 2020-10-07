@@ -1,0 +1,112 @@
+/* Styles the menu and its items */
+
+.nav				{ width: 100%; 
+					  float: left;
+					}
+.tabs				{ margin-right: 80px;
+					  position: absolute;
+					  top: 43px;
+					}
+.tab_button			{ float: left;
+					  text-align: center;
+					  width: 50px;
+					  height: 25px;
+					  background: var(--shadow-light-color, #aae);
+					  padding-top: 4px;
+					  border-radius: 8px 4px 0px 1px;
+					  margin: 4px 1px 2px 0px;
+					}
+.tab_button:hover	{ background: var(--theme-mid-gradient-color, #88a); }
+.tab_button.sel 	{ background: var(--theme-mid-gradient-color, #88a); }
+.toolbar			{ top: 52px;
+					  left: 240px;
+					  overflow:	hidden;
+					  position: absolute;
+					  width: calc(100% - 252px);
+					}
+.search_ctrls		{ display: none;
+					  float: left;
+					  white-space: nowrap;
+					  width: 100%;
+					}
+.org_ctrls			{ display: none;
+					  float: left;
+					  margin-left: 30px;
+					  white-space: nowrap;
+					}
+.editor_ctrls		{ display: none;
+					  float: left;
+					  width: 100%;
+					  white-space: nowrap;
+					}
+
+.drag_item			{ position: absolute;
+					}
+.drag_item > *		{ color: rgba(0, 0, 0, 0.7);
+					  opacity: 0.6;
+					}
+.confirm_win		{ position: absolute;
+					  visibility: hidden;
+					  padding : 10px;
+					  top: calc(60vh - 120px);
+					  left: calc(60vw - 300px);
+					  z-index: 10;
+					  display: block;
+					  background-color: #aad;
+					  background-image:	url("../image/caution.png");
+					  background-repeat: no-repeat;
+					  background-position: left top, bottom right;
+					  background-origin: content-box;
+					  box-shadow: 3px 3px 5px 5px #557;
+					}
+.confirm_title		{ font-size: large;
+					  font-weight: bold;
+					  text-align: center;
+					  margin-bottom: 10px;
+					}
+.confirm_body		{ width: 400px;
+					  text-align: center;
+					  margin-left: 100px;
+					}
+.version			{ float: left;
+					  margin-left: 8px;
+					  clear: left;
+					}
+.about_value		{ clear: right;
+					  margin-left: 10px;
+					  float: left;
+					}
+.button_box			{ text-align: right;
+					  margin-top: 10px;
+					  /*padding-left: 420px;*/
+					  clear: left;
+					  float: right;
+					}
+.button_box button  { padding: 4px;
+					  margin: 6px;
+					  height: 25px;
+					}
+.menu				{ visibility: hidden;
+					  position: absolute;
+					  left: 22px; /* File menu */
+					  top: 42px;
+					  z-index: 10;
+					  border: 1px solid var(--menu-border-color, lightsteelblue);
+					}
+#edit_menu			{ left: 63px; }
+#help_menu			{ left: 108px; }
+.menu_table			{ background-color: #aad; }
+.menu_table tr:hover td {background-color: #bbe;
+					  color: white;
+ 					  cursor: pointer;
+ 					}
+.bold				{ font-weight: bold;
+					  display: block;
+					  clear: right;
+					  float: left;
+					  text-align: left;
+					  margin-left: 10px;
+					}
+.del_bottom			{ padding-top: 10px;
+					  clear: left;
+					}
